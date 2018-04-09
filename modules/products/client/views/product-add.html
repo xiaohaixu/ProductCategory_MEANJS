@@ -1,0 +1,58 @@
+<!--<section ui-view="editView">-->
+
+<div class="modal-header" ng-controller="ProductsCreateController as vm" >
+  <h3 class="modal-title" id="modal-title">Create product</h3>
+</div>
+<div class="modal-body" id="modal-body" >
+  <form ng-submit="vm.productNew" method="post">
+    <fieldset>
+      <div class="form-group">
+        <label for="sku">Sku</label>
+        <input type="text" id="sku" name="sku" class="form-control" placeholder="Sku" ng-model="product.sku" autofocus>
+      </div>
+      <div class="form-group">
+        <label for="Name">Product Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Product Name" ng-model="product.name">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" class="form-control" placeholder="Description" ng-model="product.description">
+      </div>
+      <div class="form-group">
+        <label for="image">Product Photo</label>
+        <!--<div id="image" >-->
+          <!--<div class="form-group text-center">-->
+            <!--<img  class="img-thumbnail user-profile-picture" ngf-drop>-->
+          <!--</div>-->
+          <!--<div ng-show="vm.loading" class="form-group text-center">-->
+            <!--<img ng-src="/modules/core/client/img/loaders/loader.gif" height="50" width="50" alt="Loading image...">-->
+          <!--</div>-->
+          <!--<div ng-show="!vm.fileSelected" class="text-center form-group">-->
+            <!--<button class="btn btn-default btn-file" ngf-select="(vm.fileSelected = true) && (vm.loading = false)" ng-model="picFile" accept="image/*" ngf-before-model-change="vm.loading = true" ngf-resize="{width: 400}" ngf-resize-if="$width > 400 || $height > 400">Select Picture</button>-->
+          <!--</div>-->
+          <!--<div ng-show="vm.fileSelected" class="text-center form-group">-->
+            <!--<button class="btn btn-primary" ng-click="vm.upload(picFile)">Use This Picture</button>-->
+            <!--<button class="btn btn-default" ng-click="vm.fileSelected = false">Cancel</button>-->
+          <!--</div>-->
+          <!--<div ng-show="vm.fileSelected" class="progress text-center">-->
+            <!--<div class="progress-bar" role="progressbar" aria-valuenow="{{vm.progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.progress}}%" ng-bind="vm.progress + '%'">-->
+              <!--<span class="sr-only">{{vm.progress}}% Complete</span>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="Price" name="Price" class="form-control" placeholder="Price" ng-model="product.price">
+      </div>
+      <div class="form-group">
+        <label for="stock">Available Stock Quantity</label>
+        <input type="text" id="stock" name="stock" class="form-control" placeholder="Available Stock Quantity" ng-model="product.stock">
+      </div>
+      <div class="text-center form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button class="btn btn-warning" type="button" ng-click="createCtl.cancel()" >Cancel</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
